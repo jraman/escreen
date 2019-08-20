@@ -882,6 +882,7 @@ Returns a list of numbers which represent screen numbers presently in use."
     ;; on current screen, since we'll be displaying data about it.
     (escreen-save-current-screen-configuration)
     (setq alist (escreen-configuration-alist))
+    (defvar screen-data)
     (save-excursion
       (set-buffer escreen-menu-buffer)
       (setq buffer-read-only nil)
