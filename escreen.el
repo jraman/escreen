@@ -448,7 +448,7 @@ If prefix arg N given, jump to the Nth next screen."
   "Returns the currently selected screen number.
 If called interactively, also print this result in the minibuffer."
   (interactive)
-  (if (interactive-p)
+  (if (called-interactively-p 'any)
       (message "escreen: current screen is number %d"
                (escreen-current-screen-number))
     (escreen-current-screen-number)))
@@ -458,7 +458,7 @@ If called interactively, also print this result in the minibuffer."
 Returns a list of numbers which represent screen numbers presently in use."
   (interactive)
   (let ((screen-list (sort (escreen-configuration-screen-numbers) '<)))
-    (if (interactive-p)
+    (if (called-interactively-p 'any)
         (message "escreen: active screens: %s"
                  (mapconcat 'number-to-string screen-list " ")))
     screen-list))
